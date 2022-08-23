@@ -4,14 +4,10 @@ import com.contaBancaria.Conta.Bancaria.Model.ContaBancariaModel;
 import com.contaBancaria.Conta.Bancaria.Model.FactoryPattern.ContaBancariaFactory;
 import com.contaBancaria.Conta.Bancaria.Service.ContaBancariaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,13 +40,11 @@ public class ContaBancariaController {
     }
 
     @DeleteMapping(path = "/contabancaria/{codigo}")
-    public ResponseEntity< List<ContaBancariaModel>> deletarconta(@RequestBody Long codigo){
+    public ResponseEntity<List<ContaBancariaModel>> deletarContaEspecifica(@PathVariable Long codigo) {
         contaBancariaService.deletarConta(codigo);
-        List<ContaBancariaModel> listaDeContas = contaBancariaService.exibirContas();
-
-        return ResponseEntity.ok(listaDeContas);
+        List<ContaBancariaModel> contaEspecifica = contaBancariaService.exibirContas();
+        return ResponseEntity.ok(contaEspecifica);
     }
-
 
 
 

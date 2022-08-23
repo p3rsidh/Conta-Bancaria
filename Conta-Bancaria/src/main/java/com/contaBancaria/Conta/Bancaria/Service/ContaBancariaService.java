@@ -38,9 +38,8 @@ public class ContaBancariaService {
         return contaBancariaRepository.save(contaBancariaModel);
     }
 
-    public List<ContaBancariaModel> deletarConta(Long id){
-        contaBancariaRepository.deleteById(id);
-
+    public List<ContaBancariaModel> deletarConta(Long codigo){
+        contaBancariaRepository.deleteById(codigo);
         return contaBancariaRepository.findAll();
     }
 
