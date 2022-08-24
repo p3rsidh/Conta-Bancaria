@@ -27,7 +27,7 @@ public class ContaBancariaService {
     public ContaBancariaModel adicionarConta(ContaBancariaModel contaBancariaModel,  ContaBancariaFactory contaBancariaFactory){
 
         contaBancariaModel.getCodigo();
-        contaBancariaModel.getNomeroDaConta();
+        contaBancariaModel.getNumeroDaConta();
         contaBancariaModel.getValorAtualDaConta();
         contaBancariaModel.getAgencia();
         contaBancariaModel.getNomeDoUsuario();

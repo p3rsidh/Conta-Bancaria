@@ -20,7 +20,7 @@ public class ContaBancariaModel {
     private Long codigo;
 
     @Column(nullable = false)
-    private String nomeroDaConta;
+    private String numeroDaConta;
 
     @Column(nullable = false)
     private String agencia;
